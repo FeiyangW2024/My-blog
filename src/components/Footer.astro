@@ -1,0 +1,123 @@
+---
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>关于</h3>
+        <p>
+          专注于Python AI开发与Web前端开发的硕士研究生，
+          热衷于探索技术创新与实际应用。
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h3>快速链接</h3>
+        <ul>
+          <li><a href="#about">关于我</a></li>
+          <li><a href="#skills">技能</a></li>
+          <li><a href="#projects">项目</a></li>
+          <li><a href="#contact">联系</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>联系方式</h3>
+        <ul>
+          <li>📧 <a href="mailto:wangfeiyang24@mails.ucas.ac.cn">wangfeiyang24@mails.ucas.ac.cn</a></li>
+          <li>🌏 <a href="https://github.com/FeiyangW2024" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li>💼 <a href="https://www.goofish.com/personal?spm=a21ybx.item.itemHeader.1.13716c49UhT1Fp&userId=2208535728234" target="_blank" rel="noopener noreferrer">闲鱼</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Feiyang. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--text-dark);
+    color: #A0AEC0;
+    padding: 4rem 2rem 2rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-section h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-section p {
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .footer-section ul li a {
+    color: #A0AEC0;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: var(--primary-light);
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid #2D3748;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.9rem;
+    color: #718096;
+  }
+
+  .made-with {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      padding: 3rem 1rem 1.5rem;
+    }
+
+    .footer-content {
+      gap: 2rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,150 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "个人主页 - 全栈开发工程师", 
+	description = "专注于Python AI开发与Web全栈开发的硕士研究生" 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/hat.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary: #2E7D89;
+		--primary-light: #3A9AA8;
+		--secondary: #5BA199;
+		--accent: #6B9FAE;
+		--text-dark: #1A2332;
+		--text-gray: #4A5568;
+		--text-light: #718096;
+		--bg-light: #F7FAFC;
+		--bg-white: #FFFFFF;
+		--border-color: #E2E8F0;
+		--shadow: 0 2px 8px rgba(46, 125, 137, 0.08);
+		--shadow-lg: 0 4px 20px rgba(46, 125, 137, 0.12);
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		color: var(--text-dark);
+		background: var(--bg-light);
+		line-height: 1.6;
+		overflow-x: hidden;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1.2;
+		font-weight: 600;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	/* 页面加载动画 */
+	@keyframes pageLoad {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	main {
+		animation: pageLoad 0.6s ease-out;
+	}
+
+	/* 滚动条样式 */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--bg-light);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--primary);
+		border-radius: 5px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--primary-light);
+	}
+
+	/* 选中文本样式 */
+	::selection {
+		background: var(--primary);
+		color: white;
+	}
+
+	/* 平滑滚动行为增强 */
+	section {
+		scroll-margin-top: 80px;
+	}
+</style>
+
+<script>
+	// 添加滚动时的视差效果
+	document.addEventListener('DOMContentLoaded', () => {
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -100px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, observerOptions);
+
+		// 观察所有section
+		document.querySelectorAll('section').forEach(section => {
+			section.style.opacity = '0';
+			section.style.transform = 'translateY(30px)';
+			section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+			observer.observe(section);
+		});
+	});
+</script>
+
+<style is:global>
+	.visible {
+		opacity: 1 !important;
+		transform: translateY(0) !important;
+	}
+</style>

@@ -1,0 +1,563 @@
+---
+---
+
+<section id="gallery" class="gallery">
+  <div class="gallery-bg">
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">作品画廊</h2>
+    <p class="section-subtitle">精选项目作品展示</p>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide" data-index="0">
+            <div class="slide-content webgis-preview">
+              <div class="slide-info">
+                <span class="slide-badge">Web开发</span>
+                <h3>WebGIS地理信息系统</h3>
+                <p>遥感影像可视化与地图交互</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="1">
+            <div class="slide-content unet-preview">
+              <div class="slide-info">
+                <span class="slide-badge">AI项目</span>
+                <h3>U-Net图像分割系统</h3>
+                <p>深度学习遥感图像分割</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="2">
+            <div class="slide-content website-preview">
+              <div class="slide-info">
+                <span class="slide-badge">Web开发</span>
+                <h3>课题组官方网站</h3>
+                <p>响应式网页设计与开发</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="3">
+            <div class="slide-content dashboard-preview">
+              <div class="slide-info">
+                <span class="slide-badge">数据可视化</span>
+                <h3>数据分析面板</h3>
+                <p>交互式图表与统计分析</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="4">
+            <div class="slide-content aigc-preview">
+              <div class="slide-info">
+                <span class="slide-badge">AI应用</span>
+                <h3>AIGC内容生成应用</h3>
+                <p>智能对话与内容创作</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="5">
+            <div class="slide-content remote-preview">
+              <div class="slide-info">
+                <span class="slide-badge">Python工具</span>
+                <h3>遥感数据处理工具集</h3>
+                <p>图像预处理与特征提取</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 轮播控制 -->
+      <button class="carousel-btn prev-btn" aria-label="上一张">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <button class="carousel-btn next-btn" aria-label="下一张">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+
+      <!-- 指示器 -->
+      <div class="carousel-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+        <button class="indicator" data-slide="3"></button>
+        <button class="indicator" data-slide="4"></button>
+        <button class="indicator" data-slide="5"></button>
+      </div>
+    </div>
+
+    <div class="gallery-note">
+      <p>💡 可替换为真实项目截图 · 自动轮播中</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #F7FAFC 0%, #E6F3F5 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .bg-shape {
+    position: absolute;
+    border: 2px solid rgba(46, 125, 137, 0.08);
+    animation: shapeFloat 25s infinite ease-in-out;
+  }
+
+  .shape-1 {
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    right: -100px;
+    border-radius: 50%;
+    animation-delay: 0s;
+  }
+
+  .shape-2 {
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    left: -50px;
+    animation-delay: -12s;
+  }
+
+  @keyframes shapeFloat {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+      transform: translate(40px, -40px) rotate(120deg);
+    }
+    66% {
+      transform: translate(-30px, 30px) rotate(240deg);
+    }
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    margin-bottom: 4rem;
+  }
+
+  /* 轮播容器 */
+  .carousel-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .carousel-container {
+    overflow: hidden;
+    padding: 3rem 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 2rem;
+  }
+
+  .carousel-slide {
+    min-width: calc(100% / 3);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.5;
+    filter: brightness(0.7);
+    transform: scale(0.85);
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(1);
+    z-index: 2;
+  }
+
+  .slide-content {
+    position: relative;
+    height: 400px;
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 40px rgba(46, 125, 137, 0.15);
+  }
+
+  .carousel-slide.active .slide-content {
+    border-color: var(--primary);
+    box-shadow: 0 20px 60px rgba(46, 125, 137, 0.25);
+  }
+
+  .slide-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      transparent 2px,
+      transparent 4px,
+      rgba(255, 255, 255, 0.03) 6px
+    );
+  }
+
+  /* 渐变背景 */
+  .webgis-preview {
+    background: linear-gradient(135deg, #2E7D89 0%, #3A9AA8 100%);
+  }
+
+  .unet-preview {
+    background: linear-gradient(135deg, #4A90A4 0%, #5BA199 100%);
+  }
+
+  .website-preview {
+    background: linear-gradient(135deg, #5BA199 0%, #6B9FAE 100%);
+  }
+
+  .dashboard-preview {
+    background: linear-gradient(135deg, #6B9FAE 0%, #4A90A4 100%);
+  }
+
+  .aigc-preview {
+    background: linear-gradient(135deg, #3A9AA8 0%, #5BA199 100%);
+  }
+
+  .remote-preview {
+    background: linear-gradient(135deg, #2E7D89 0%, #6B9FAE 100%);
+  }
+
+  .slide-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+    color: white;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .carousel-slide.active .slide-info {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .slide-badge {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .slide-info h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+
+  .slide-info p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* 控制按钮 */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+
+  .carousel-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .carousel-btn:hover svg {
+    color: white;
+  }
+
+  .carousel-btn svg {
+    color: var(--text-gray);
+    transition: color 0.3s ease;
+  }
+
+  .prev-btn {
+    left: -25px;
+  }
+
+  .next-btn {
+    right: -25px;
+  }
+
+  /* 指示器 */
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .indicator:hover {
+    background: var(--accent);
+    transform: scale(1.2);
+  }
+
+  .indicator.active {
+    background: var(--primary);
+    width: 40px;
+    border-radius: 6px;
+  }
+
+  .gallery-note {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary);
+    display: inline-block;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+  }
+
+  .gallery-note p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  @media (max-width: 968px) {
+    .carousel-slide {
+      min-width: 100%;
+    }
+
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    .slide-content {
+      height: 300px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .gallery {
+      padding: 4rem 1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track') as HTMLElement | null;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.prev-btn') as HTMLElement | null;
+    const nextBtn = document.querySelector('.next-btn') as HTMLElement | null;
+    const indicators = document.querySelectorAll('.indicator');
+    
+    if (!track || !prevBtn || !nextBtn || !track.parentElement) return;
+    
+    let currentIndex = 0;
+    let autoplayInterval: number | undefined;
+    const totalSlides = slides.length;
+
+    // 更新轮播显示
+    function updateCarousel(animate = true) {
+      if (!track || !track.parentElement) return;
+      
+      if (!animate) {
+        track.style.transition = 'none';
+      }
+
+      // 计算偏移量，使中间项居中
+      const firstSlide = slides[0] as HTMLElement;
+      const slideWidth = firstSlide.offsetWidth;
+      const gap = 32; // 2rem = 32px
+      const offset = -(currentIndex * (slideWidth + gap)) + (track.parentElement.offsetWidth / 2) - (slideWidth / 2);
+      
+      track.style.transform = `translateX(${offset}px)`;
+
+      // 更新激活状态
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentIndex) {
+          slide.classList.add('active');
+        }
+      });
+
+      // 更新指示器
+      indicators.forEach((indicator, index) => {
+        indicator.classList.remove('active');
+        if (index === currentIndex) {
+          indicator.classList.add('active');
+        }
+      });
+
+      if (!animate) {
+        setTimeout(() => {
+          if (track) {
+            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+          }
+        }, 50);
+      }
+    }
+
+    // 下一张
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    // 上一张
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    // 自动轮播
+    function startAutoplay() {
+      autoplayInterval = window.setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoplay() {
+      if (autoplayInterval !== undefined) {
+        clearInterval(autoplayInterval);
+      }
+    }
+
+    // 事件监听
+    nextBtn.addEventListener('click', () => {
+      stopAutoplay();
+      nextSlide();
+      startAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      stopAutoplay();
+      prevSlide();
+      startAutoplay();
+    });
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        stopAutoplay();
+        currentIndex = index;
+        updateCarousel();
+        startAutoplay();
+      });
+    });
+
+    // 鼠标悬停暂停自动播放
+    if (track.parentElement) {
+      track.parentElement.addEventListener('mouseenter', stopAutoplay);
+      track.parentElement.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // 初始化
+    updateCarousel(false);
+    startAutoplay();
+
+    // 响应式处理
+    let resizeTimer: number | undefined;
+    window.addEventListener('resize', () => {
+      if (resizeTimer !== undefined) {
+        clearTimeout(resizeTimer);
+      }
+      resizeTimer = window.setTimeout(() => {
+        updateCarousel(false);
+      }, 250);
+    });
+  });
+</script>

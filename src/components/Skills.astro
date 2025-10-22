@@ -1,0 +1,260 @@
+---
+---
+
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title">技能领域</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🐍</div>
+          <h3>Python开发与AI</h3>
+        </div>
+        <ul class="skill-list">
+          <li>
+            <span class="skill-name">Python编程</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">遥感图像处理</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">机器学习/深度学习</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">数据分析</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">U-Net图像分割</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🌐</div>
+          <h3>Web全栈开发</h3>
+        </div>
+        <ul class="skill-list">
+          <li>
+            <span class="skill-name">HTML/CSS/JavaScript</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">Vue3框架</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">Layui/ElementUI</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">WebGIS开发</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">响应式网页设计</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🤖</div>
+          <h3>AI创新与其他</h3>
+        </div>
+        <ul class="skill-list">
+          <li>
+            <span class="skill-name">AIGC技术</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">智能体(Agent)开发</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">Prompt设计</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">算法设计</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">英语(CET-4/6)</span>
+            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills {
+    padding: 6rem 2rem;
+    background: var(--bg-light);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+
+  .skill-category {
+    background: white;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-category::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(46, 125, 137, 0.05) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.6s ease;
+  }
+
+  .skill-category:hover::after {
+    transform: scale(1);
+  }
+
+  .skill-category:hover {
+    box-shadow: 0 8px 30px rgba(46, 125, 137, 0.12);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--bg-light);
+  }
+
+  .category-icon {
+    font-size: 2rem;
+  }
+
+  .category-header h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .skill-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-name {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    font-weight: 500;
+  }
+
+  .skill-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-light);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    transition: width 1s ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .skills {
+      padding: 4rem 1rem;
+    }
+  }
+</style>

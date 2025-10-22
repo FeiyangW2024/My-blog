@@ -1,0 +1,393 @@
+---
+---
+
+<section id="achievements" class="achievements">
+  <div class="container">
+    <h2 class="section-title">荣誉与奖项</h2>
+    <p class="section-subtitle">获奖记录与成就展示</p>
+    
+    <!-- 统计面板 -->
+    <div class="stats-panel">
+      <div class="stat-item">
+        <div class="stat-icon">📊</div>
+        <div class="stat-info">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">完成项目</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">🎯</div>
+        <div class="stat-info">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">技术领域</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">💰</div>
+        <div class="stat-info">
+          <div class="stat-number">¥10k+</div>
+          <div class="stat-label">项目收入</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-info">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">荣誉奖项</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 徽章墙 -->
+    <div class="badge-wall">
+      <div class="badge-item gold">
+        <div class="badge-ribbon"></div>
+        <div class="badge-content">
+          <div class="badge-icon">🏆</div>
+          <h3>全国计算机设计大赛</h3>
+          <div class="badge-level">二等奖</div>
+        </div>
+      </div>
+
+      <div class="badge-item silver">
+        <div class="badge-ribbon"></div>
+        <div class="badge-content">
+          <div class="badge-icon">🥉</div>
+          <h3>服务外包大赛</h3>
+          <div class="badge-level">三等奖</div>
+        </div>
+      </div>
+
+      <div class="badge-item gold">
+        <div class="badge-ribbon"></div>
+        <div class="badge-content">
+          <div class="badge-icon">🥇</div>
+          <h3>大学生数学竞赛</h3>
+          <div class="badge-level">省级一等奖</div>
+        </div>
+      </div>
+
+      <div class="badge-item bronze">
+        <div class="badge-ribbon"></div>
+        <div class="badge-content">
+          <div class="badge-icon">⭐</div>
+          <h3>三好学生</h3>
+          <div class="badge-level">荣誉称号</div>
+        </div>
+      </div>
+
+      <div class="badge-item bronze">
+        <div class="badge-ribbon"></div>
+        <div class="badge-content">
+          <div class="badge-icon">👔</div>
+          <h3>优秀学生干部</h3>
+          <div class="badge-level">荣誉称号</div>
+        </div>
+      </div>
+
+      <div class="badge-item special">
+        <div class="badge-ribbon"></div>
+        <div class="badge-content">
+          <div class="badge-icon">💼</div>
+          <h3>商业项目实践</h3>
+          <div class="badge-level">万元+成交额</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .achievements {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--bg-light) 0%, #E6F3F5 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .achievements::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(46, 125, 137, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    margin-bottom: 4rem;
+  }
+
+  /* 统计面板 */
+  .stats-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .stat-item {
+    background: white;
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+    transform: scaleY(0);
+    transition: transform 0.4s ease;
+  }
+
+  .stat-item:hover::before {
+    transform: scaleY(1);
+  }
+
+  .stat-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(46, 125, 137, 0.15);
+  }
+
+  .stat-icon {
+    font-size: 3.5rem;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+  }
+
+  .stat-item:hover .stat-icon {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  .stat-info {
+    flex: 1;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 1rem;
+    color: var(--text-gray);
+    font-weight: 500;
+  }
+
+  /* 徽章墙 */
+  .badge-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .badge-item {
+    position: relative;
+    background: white;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 30px),
+      calc(100% - 30px) 100%,
+      0 100%
+    );
+  }
+
+  .badge-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(46, 125, 137, 0.25);
+  }
+
+  .badge-ribbon {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    padding: 0.5rem 2.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    transform: rotate(45deg);
+    letter-spacing: 1px;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .badge-item.gold .badge-ribbon {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  }
+
+  .badge-item.gold .badge-ribbon::before {
+    content: 'GOLD';
+  }
+
+  .badge-item.silver .badge-ribbon {
+    background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
+  }
+
+  .badge-item.silver .badge-ribbon::before {
+    content: 'SILVER';
+  }
+
+  .badge-item.bronze .badge-ribbon {
+    background: linear-gradient(135deg, #CD7F32 0%, #B8860B 100%);
+  }
+
+  .badge-item.bronze .badge-ribbon::before {
+    content: 'BRONZE';
+  }
+
+  .badge-item.special .badge-ribbon {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  }
+
+  .badge-item.special .badge-ribbon::before {
+    content: 'SPECIAL';
+  }
+
+  .badge-content {
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-light) 0%, white 100%);
+  }
+
+  .badge-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+    animation: badgeFloat 3s ease-in-out infinite;
+  }
+
+  @keyframes badgeFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .badge-item:hover .badge-icon {
+    animation: badgeBounce 0.6s ease;
+  }
+
+  @keyframes badgeBounce {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-15px) scale(1.15);
+    }
+  }
+
+  .badge-content h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .badge-level {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: var(--primary);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  }
+
+  .badge-item.gold .badge-level {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  }
+
+  .badge-item.silver .badge-level {
+    background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
+  }
+
+  .badge-item.bronze .badge-level {
+    background: linear-gradient(135deg, #CD7F32 0%, #B8860B 100%);
+  }
+
+  .badge-item.special .badge-level {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .achievements {
+      padding: 4rem 1rem;
+    }
+
+    .stats-panel {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .badge-wall {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+  }
+</style>

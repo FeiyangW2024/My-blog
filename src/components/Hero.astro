@@ -1,0 +1,586 @@
+---
+---
+
+<section id="home" class="hero">
+  <!-- 背景动画装饰 -->
+  <div class="hero-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="greeting">你好，我是</p>
+      <h1 class="name">
+        <span class="name-char" style="--char-index: 0">Fei</span>
+        <span class="name-char" style="--char-index: 1">yang</span>
+        <span class="name-char" style="--char-index: 2">Wang</span>
+      </h1>
+      <p class="title">
+        <span class="typing-text">前端开发工程师 | AI技术探索者</span>
+      </p>
+      <p class="subtitle">
+        专注于Python AI开发与Web前端开发<br/>
+        中国科学院大学硕士在读 · 具备扎实的编程基础与项目实践经验
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <span>查看项目</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary">联系我</a>
+      </div>
+      
+      <!-- 技术标签云 -->
+      <div class="tech-tags">
+        <span class="tag" style="--delay: 0s">Python</span>
+        <span class="tag" style="--delay: 0.1s">HTML/CSS/JavaScript</span>
+        <span class="tag" style="--delay: 0.2s">Vue3</span>
+        <span class="tag" style="--delay: 0.3s">AI/ML</span>
+        <span class="tag" style="--delay: 0.4s">WebGIS</span>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="visual-card">
+        <div class="code-snippet">
+          <div class="code-header">
+            <div class="dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="file-name">developer.py</span>
+          </div>
+          <div class="code-body">
+            <code id="code-content">
+              <span class="keyword">class</span> <span class="class-name">Developer</span>:<br/>
+              &nbsp;&nbsp;<span class="keyword">def</span> <span class="function">__init__</span>(self):<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;self.name = <span class="string">"Feiyang"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;self.skills = [<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string code-line" data-index="0">"Python"</span>,<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string code-line" data-index="1">"HTML/CSS/JavaScript"</span>,<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string code-line" data-index="2">"Vue3"</span>,<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string code-line" data-index="3">"AI/ML"</span><br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;self.status = <span class="string animate-status">"开放接单中"</span>
+            </code>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 装饰性代码符号 -->
+      <div class="code-symbols">
+        <span class="symbol symbol-1">{ }</span>
+        <span class="symbol symbol-2">&lt;/&gt;</span>
+        <span class="symbol symbol-3">[ ]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(135deg, #F7FAFC 0%, #E6F3F5 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 背景动画装饰 */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .floating-shape {
+    position: absolute;
+    border: 2px solid rgba(46, 125, 137, 0.1);
+    animation: float 20s infinite ease-in-out;
+  }
+
+  .shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+  }
+
+  .shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 15%;
+    right: 10%;
+    animation-delay: -7s;
+  }
+
+  .shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    left: 60%;
+    animation-delay: -14s;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(46, 125, 137, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46, 125, 137, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+      transform: translate(30px, -30px) rotate(120deg);
+    }
+    66% {
+      transform: translate(-20px, 20px) rotate(240deg);
+    }
+  }
+
+  @keyframes gridMove {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 50px);
+    }
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-text {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .greeting {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .name {
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .name-char {
+    display: inline-block;
+    animation: bounceIn 0.6s ease-out;
+    animation-delay: calc(var(--char-index) * 0.1s);
+    animation-fill-mode: both;
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(-30px);
+    }
+    50% {
+      transform: scale(1.05) translateY(0);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .typing-text {
+    display: inline-block;
+    border-right: 2px solid var(--primary);
+    animation: typing 3s steps(30) 1s both, blink 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    padding: 0.875rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .btn span, .btn svg {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-secondary {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: white;
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* 技术标签云 */
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    animation: fadeIn 1s ease-out 1.5s both;
+  }
+
+  .tag {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+    animation: tagSlideIn 0.5s ease-out both;
+    animation-delay: calc(1.5s + var(--delay));
+    transition: all 0.3s ease;
+  }
+
+  .tag:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+
+  @keyframes tagSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .hero-visual {
+    animation: fadeInRight 0.8s ease-out;
+    position: relative;
+  }
+
+  .visual-card {
+    background: white;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .visual-card:hover {
+    /* transform: translateY(-5px); */
+    box-shadow: 0 8px 30px rgba(46, 125, 137, 0.15);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  .dots span:nth-child(1) { 
+    background: #FF5F56;
+    animation-delay: 0s;
+  }
+  .dots span:nth-child(2) { 
+    background: #FFBD2E;
+    animation-delay: 0.2s;
+  }
+  .dots span:nth-child(3) { 
+    background: #27C93F;
+    animation-delay: 0.4s;
+  }
+
+  @keyframes dotPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  }
+
+  .file-name {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-family: 'Monaco', monospace;
+  }
+
+  .code-body {
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+  }
+
+  .code-line {
+    display: inline-block;
+    animation: codeFadeIn 0.5s ease-out both;
+    animation-delay: calc(2s + var(--index) * 0.2s);
+  }
+
+  @keyframes codeFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-status {
+    animation: statusBlink 2s ease-in-out infinite;
+  }
+
+  @keyframes statusBlink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .keyword {
+    color: #0066CC;
+    font-weight: 600;
+  }
+
+  .class-name {
+    color: #2E7D89;
+    font-weight: 600;
+  }
+
+  .function {
+    color: #6B9FAE;
+  }
+
+  .string {
+    color: #5BA199;
+  }
+
+  /* 装饰性代码符号 */
+  .code-symbols {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .symbol {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(46, 125, 137, 0.08);
+    font-family: 'Monaco', monospace;
+    animation: symbolFloat 10s ease-in-out infinite;
+  }
+
+  .symbol-1 {
+    top: -20px;
+    right: -20px;
+    animation-delay: 0s;
+  }
+
+  .symbol-2 {
+    bottom: -20px;
+    left: -20px;
+    animation-delay: -5s;
+  }
+
+  .symbol-3 {
+    top: 50%;
+    right: -30px;
+    animation-delay: -8s;
+  }
+
+  @keyframes symbolFloat {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-20px) rotate(10deg);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 968px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .name {
+      font-size: 2.5rem;
+    }
+
+    .title {
+      font-size: 1.25rem;
+    }
+
+    .hero-visual {
+      order: -1;
+    }
+
+    .floating-shape {
+      display: none;
+    }
+
+    .code-symbols {
+      display: none;
+    }
+  }
+</style>
