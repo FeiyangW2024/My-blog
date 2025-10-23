@@ -102,8 +102,8 @@
 
   .floating-shape {
     position: absolute;
-    border: 2px solid rgba(46, 125, 137, 0.1);
-    animation: float 20s infinite ease-in-out;
+    border: 2px solid rgba(46, 125, 137, 0.15);
+    box-shadow: 0 0 20px rgba(46, 125, 137, 0.05);
   }
 
   .shape-1 {
@@ -111,6 +111,8 @@
     height: 300px;
     top: 10%;
     left: 5%;
+    border-radius: 50%;
+    animation: floatCircle 15s infinite ease-in-out;
     animation-delay: 0s;
   }
 
@@ -119,7 +121,9 @@
     height: 200px;
     bottom: 15%;
     right: 10%;
-    animation-delay: -7s;
+    transform: rotate(45deg);
+    animation: floatSquare 12s infinite ease-in-out;
+    animation-delay: 0s;
   }
 
   .shape-3 {
@@ -127,28 +131,75 @@
     height: 150px;
     top: 60%;
     left: 60%;
-    animation-delay: -14s;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: floatDiamond 18s infinite ease-in-out;
+    animation-delay: 0s;
   }
 
   .grid-overlay {
     position: absolute;
     inset: 0;
     background-image: 
-      linear-gradient(rgba(46, 125, 137, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(46, 125, 137, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(46, 125, 137, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46, 125, 137, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
-    animation: gridMove 20s linear infinite;
+    animation: gridMove 30s linear infinite;
+    opacity: 0.7;
   }
 
-  @keyframes float {
+  /* 圆形漂浮 */
+  @keyframes floatCircle {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.6;
+    }
+    25% {
+      transform: translate(40px, -40px) scale(1.1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translate(50px, 0) scale(0.95);
+      opacity: 0.7;
+    }
+    75% {
+      transform: translate(20px, 30px) scale(1.05);
+      opacity: 0.85;
+    }
+  }
+
+  /* 正方形摆动（以45度为中心） */
+  @keyframes floatSquare {
+    0%, 100% {
+      transform: translate(0, 0) rotate(35deg);
+      opacity: 0.6;
+    }
+    25% {
+      transform: translate(-30px, 20px) rotate(55deg);
+      opacity: 0.85;
+    }
+    50% {
+      transform: translate(0, -20px) rotate(45deg);
+      opacity: 0.75;
+    }
+    75% {
+      transform: translate(20px, 10px) rotate(40deg);
+      opacity: 0.8;
+    }
+  }
+
+  /* 菱形旋转漂浮 */
+  @keyframes floatDiamond {
     0%, 100% {
       transform: translate(0, 0) rotate(0deg);
+      opacity: 0.6;
     }
     33% {
-      transform: translate(30px, -30px) rotate(120deg);
+      transform: translate(-25px, -35px) rotate(120deg);
+      opacity: 0.8;
     }
     66% {
-      transform: translate(-20px, 20px) rotate(240deg);
+      transform: translate(30px, 25px) rotate(240deg);
+      opacity: 0.7;
     }
   }
 
@@ -492,37 +543,48 @@
     position: absolute;
     font-size: 3rem;
     font-weight: 700;
-    color: rgba(46, 125, 137, 0.08);
+    color: rgba(46, 125, 137, 0.12);
     font-family: 'Monaco', monospace;
-    animation: symbolFloat 10s ease-in-out infinite;
+    animation: symbolFloat 8s ease-in-out infinite;
   }
 
   .symbol-1 {
     top: -20px;
     right: -20px;
     animation-delay: 0s;
+    animation-duration: 7s;
   }
 
   .symbol-2 {
     bottom: -20px;
     left: -20px;
-    animation-delay: -5s;
+    animation-delay: -2.5s;
+    animation-duration: 9s;
   }
 
   .symbol-3 {
     top: 50%;
     right: -30px;
-    animation-delay: -8s;
+    animation-delay: -5s;
+    animation-duration: 8s;
   }
 
   @keyframes symbolFloat {
     0%, 100% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 0.8;
+      transform: translateY(0) rotate(0deg) scale(1);
+      opacity: 0.5;
+    }
+    25% {
+      transform: translateY(-15px) rotate(8deg) scale(1.1);
+      opacity: 0.7;
     }
     50% {
-      transform: translateY(-20px) rotate(10deg);
-      opacity: 0.4;
+      transform: translateY(-25px) rotate(15deg) scale(0.95);
+      opacity: 0.3;
+    }
+    75% {
+      transform: translateY(-10px) rotate(5deg) scale(1.05);
+      opacity: 0.6;
     }
   }
 

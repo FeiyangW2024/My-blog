@@ -2,6 +2,9 @@
 ---
 
 <section id="achievements" class="achievements">
+  <!-- 顶部点光源 -->
+  <div class="light-source"></div>
+  
   <div class="container">
     <h2 class="section-title">荣誉与奖项</h2>
     <p class="section-subtitle">获奖记录与成就展示</p>
@@ -100,19 +103,90 @@
 <style>
   .achievements {
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, var(--bg-light) 0%, #E6F3F5 100%);
+    background: linear-gradient(180deg, #E0E8EB 0%, #EDF3F5 50%, #E6F0F3 100%);
     position: relative;
     overflow: hidden;
   }
 
+  /* 顶部点光源 */
+  .light-source {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle at center,
+      rgba(230, 250, 255, 0.95) 0%,
+      rgba(200, 240, 250, 0.7) 10%,
+      rgba(150, 220, 240, 0.5) 20%,
+      rgba(100, 200, 230, 0.3) 35%,
+      rgba(70, 180, 220, 0.15) 50%,
+      rgba(46, 125, 137, 0.08) 70%,
+      transparent 100%
+    );
+    filter: blur(50px);
+    animation: lightPulse 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .light-source::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(200, 240, 250, 0.2) 30%,
+      rgba(150, 220, 240, 0.1) 50%,
+      transparent 70%
+    );
+    filter: blur(80px);
+  }
+
+  @keyframes lightPulse {
+    0%, 100% {
+      opacity: 0.85;
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.15);
+    }
+  }
+
   .achievements::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background: radial-gradient(
+      ellipse at top center,
+      rgba(200, 240, 250, 0.2) 0%,
+      rgba(150, 220, 240, 0.12) 30%,
+      rgba(100, 200, 230, 0.06) 50%,
+      transparent 80%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .achievements::after {
     content: '';
     position: absolute;
     top: -50%;
     right: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(46, 125, 137, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(46, 125, 137, 0.04) 0%, transparent 70%);
     border-radius: 50%;
   }
 
@@ -184,14 +258,38 @@
     transition: transform 0.4s ease;
   }
 
+  .stat-item::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    right: 10%;
+    height: 20px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(91, 161, 153, 0.7) 0%,
+      rgba(70, 140, 135, 0.5) 30%,
+      rgba(46, 125, 137, 0.3) 50%,
+      transparent 80%
+    );
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
   .stat-item:hover::before {
     transform: scaleY(1);
   }
 
+  .stat-item:hover::after {
+    opacity: 1;
+  }
+
   .stat-item:hover {
     border-color: var(--primary);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(46, 125, 137, 0.15);
+    box-shadow: 
+      0 8px 30px rgba(46, 125, 137, 0.15),
+      0 15px 40px rgba(91, 161, 153, 0.25);
   }
 
   .stat-icon {
@@ -236,8 +334,8 @@
     position: relative;
     background: white;
     padding: 0;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible;
+    transition: all 0.4s ease;
     clip-path: polygon(
       0 0,
       100% 0,
@@ -245,11 +343,30 @@
       calc(100% - 30px) 100%,
       0 100%
     );
+    box-shadow: 0 10px 40px rgba(46, 125, 137, 0.15);
   }
 
-  .badge-item:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(46, 125, 137, 0.25);
+  /* 底部发光效果 */
+  .badge-item::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 5%;
+    right: 5%;
+    height: 30px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(91, 161, 153, 0.8) 0%,
+      rgba(70, 140, 135, 0.6) 20%,
+      rgba(46, 125, 137, 0.4) 40%,
+      rgba(46, 125, 137, 0.2) 60%,
+      transparent 85%
+    );
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: -1;
   }
 
   .badge-ribbon {
