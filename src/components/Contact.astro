@@ -28,7 +28,7 @@
       <div class="contact-form">
         <h3>快速留言</h3>
         <p class="form-subtitle">填写表单，我会尽快回复您</p>
-        <form>
+  <form id="contact-form">
           <div class="form-row">
             <div class="form-group">
               <label for="name">您的姓名</label>
@@ -55,6 +55,7 @@
             </svg>
           </button>
         </form>
+        <div id="form-feedback" role="status" aria-live="polite" style="margin-top:0.75rem;color:var(--text-dark);"></div>
       </div>
     </div>
 
@@ -473,3 +474,50 @@
     }
   }
 </style>
+
+<script type="module">
+  // 客户端表单提交：将表单数据 POST 到 /api/contact（JSON），显示成功/错误提示
+  const form = document.getElementById('contact-form');
+  const feedback = document.getElementById('form-feedback');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      feedback.textContent = '';
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get('name') || '',
+        email: formData.get('email') || '',
+        subject: formData.get('subject') || '来自网站的消息',
+        message: formData.get('message') || ''
+      };
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          feedback.style.color = 'green';
+          feedback.textContent = data.message || '消息已发送，感谢联系！';
+          form.reset();
+        } else {
+          feedback.style.color = 'crimson';
+          feedback.textContent = data.error || '发送失败，请稍后重试。';
+        }
+      } catch (err) {
+        feedback.style.color = 'crimson';
+        feedback.textContent = '网络错误，无法发送消息。';
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+</script>
