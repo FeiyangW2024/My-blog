@@ -1,8 +1,20 @@
 export async function onRequest(context) {
   const { request, env } = context;
 
+  // CORS 处理：为浏览器的预检请求 (OPTIONS) 返回允许的头
+  const CORS_HEADERS = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*', // 可按需改为你的站点域名以更严格限制
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  };
+
+  if (request.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: CORS_HEADERS });
+  }
+
   if (request.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method Not Allowed' }), { status: 405, headers: { 'Content-Type': 'application/json' } });
+    return new Response(JSON.stringify({ error: 'Method Not Allowed' }), { status: 405, headers: CORS_HEADERS });
   }
 
   try {
@@ -20,7 +32,7 @@ export async function onRequest(context) {
     const SENDER_EMAIL = env && env.SENDER_EMAIL; // optional, but recommended
 
     if (!BREVO_API_KEY) {
-      return new Response(JSON.stringify({ error: '服务器未配置 BREVO_API_KEY 环境变量。' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+      return new Response(JSON.stringify({ error: '服务器未配置 BREVO_API_KEY 环境变量。' }), { status: 500, headers: CORS_HEADERS });
     }
 
     const TO_EMAIL = 'wangfeiyang24@mails.ucas.ac.cn';
@@ -45,11 +57,11 @@ export async function onRequest(context) {
 
     if (!resp.ok) {
       const text = await resp.text();
-      return new Response(JSON.stringify({ error: '邮件发送服务返回错误：' + text }), { status: 502, headers: { 'Content-Type': 'application/json' } });
+      return new Response(JSON.stringify({ error: '邮件发送服务返回错误：' + text }), { status: 502, headers: CORS_HEADERS });
     }
 
-    return new Response(JSON.stringify({ message: '邮件发送成功！' }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    return new Response(JSON.stringify({ message: '邮件发送成功！' }), { status: 200, headers: CORS_HEADERS });
   } catch (err) {
-    return new Response(JSON.stringify({ error: err.message || '未知错误' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+    return new Response(JSON.stringify({ error: err.message || '未知错误' }), { status: 500, headers: CORS_HEADERS });
   }
 }
