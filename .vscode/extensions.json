@@ -1,4 +1,7 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  // 推荐安装 Astro 官方扩展，打开项目时会提示用户安装
+  "recommendations": [
+    "astro-build.astro-vscode"
+  ],
   "unwantedRecommendations": []
 }

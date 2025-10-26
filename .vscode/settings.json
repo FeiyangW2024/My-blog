@@ -1,0 +1,6 @@
+{
+  // 将 .astro 文件与 Astro 语言关联，帮助 TypeScript/HTML 语言服务正确识别
+  "files.associations": {
+    "*.astro": "astro"
+  }
+}
