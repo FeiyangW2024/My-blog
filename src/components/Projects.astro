@@ -1,4 +1,10 @@
 ---
+import resGroupImg from '../assets/Gallery Pic/ResGroup.png';
+import WORLDVIEWImg from '../assets/Gallery Pic/WORLDVIEW.png';
+import UNET from '../assets/Gallery Pic/UNET.png';
+import TABLE from '../assets/Gallery Pic/TABLE1.png';
+import RS from '../assets/Gallery Pic/RS.png';
+import AIGC from '../assets/Gallery Pic/AIGC.png';
 ---
 
 <section id="projects" class="projects">
@@ -24,24 +30,25 @@
     <div class="projects-grid">
       <div class="project-card">
         <div class="project-image">
-          <div class="image-placeholder webgis-bg">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-              <circle cx="12" cy="9" r="2.5"/>
-            </svg>
-          </div>
+            <img 
+              src={WORLDVIEWImg.src} 
+              alt="WORLDVIEW系统完整界面"
+              class="project-screenshot"
+              loading="lazy"
+            />
+          <div class="image-overlay website-bg"></div>
           <div class="project-tag web">Web开发</div>
         </div>
         <div class="project-content">
-          <h3>WebGIS地理信息系统</h3>
+          <h3>WORLDVIEW遥感影像系统</h3>
           <p class="project-desc">
-            独立开发的NASA WorldView同类WebGIS系统，实现遥感影像可视化、地图交互、数据查询等功能。
+            基于Vue3+Vite+Leaflet开发的NASA WorldView同类WebGIS系统，支持瓦片地图渲染、左右对比模式、双日期A/B对比、Canvas/DOM混合时间轴、动态日期检测等核心功能。实现性能优化与平滑交互，单页应用可独立部署。
           </p>
           <div class="tech-stack">
-            <span class="tech">JavaScript</span>
             <span class="tech">Vue3</span>
-            <span class="tech">GIS</span>
-            <span class="tech">OpenLayers</span>
+            <span class="tech">Vite</span>
+            <span class="tech">Leaflet</span>
+            <span class="tech">Canvas</span>
           </div>
           <div class="project-links">
             <a href="#gallery" class="project-link">查看详情 →</a>
@@ -51,26 +58,25 @@
 
       <div class="project-card">
         <div class="project-image">
-          <div class="image-placeholder unet-bg">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="3" width="7" height="7" rx="1"/>
-              <rect x="14" y="3" width="7" height="7" rx="1"/>
-              <rect x="3" y="14" width="7" height="7" rx="1"/>
-              <rect x="14" y="14" width="7" height="7" rx="1"/>
-            </svg>
-          </div>
-          <div class="project-tag python">Python AI</div>
+            <img 
+              src={UNET.src} 
+              alt="改进U-Net遥感图像分割系统"
+              class="project-screenshot"
+              loading="lazy"
+            />
+          <div class="image-overlay website-bg"></div>
+          <div class="project-tag python">深度学习</div>
         </div>
         <div class="project-content">
-          <h3>改进U-Net图像分割系统</h3>
+          <h3>改进U-Net遥感图像分割系统</h3>
           <p class="project-desc">
-            基于改进的U-Net深度学习模型，完成遥感图像分割任务，提升分割精度与效率。
+            基于改进U-Net架构的深度学习图像分割模型，针对遥感图像特点优化网络结构与训练策略。使用PyTorch实现模型训练、推理与评估流程，显著提升分割精度与泛化能力。
           </p>
           <div class="tech-stack">
             <span class="tech">Python</span>
             <span class="tech">PyTorch</span>
             <span class="tech">U-Net</span>
-            <span class="tech">深度学习</span>
+            <span class="tech">遥感AI</span>
           </div>
           <div class="project-links">
             <a href="#gallery" class="project-link">查看详情 →</a>
@@ -80,26 +86,25 @@
 
       <div class="project-card">
         <div class="project-image">
-          <div class="image-placeholder website-bg">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="3" width="20" height="14" rx="2"/>
-              <line x1="2" y1="7" x2="22" y2="7"/>
-              <circle cx="6" cy="5" r="0.5" fill="currentColor"/>
-              <circle cx="8" cy="5" r="0.5" fill="currentColor"/>
-            </svg>
-          </div>
-          <div class="project-tag web">Web开发</div>
+          <img 
+            src={resGroupImg.src} 
+            alt="课题组官网与新闻发布系统截图"
+            class="project-screenshot"
+            loading="lazy"
+          />
+          <div class="image-overlay website-bg"></div>
+          <div class="project-tag web">全栈开发</div>
         </div>
         <div class="project-content">
-          <h3>课题组官方网站</h3>
+          <h3>课题组官网与新闻发布系统</h3>
           <p class="project-desc">
-            为研究课题组设计开发的官方网站，包括团队介绍、研究成果展示、新闻发布等模块。
+            为"地球观测与模拟课题组"开发的官方网站与CMS系统。前端基于Layui实现响应式多页面与API双数据源策略，后端采用Node.js+Express+SQLite架构，支持富文本编辑、图片上传压缩、访问统计、管理后台等完整功能。
           </p>
           <div class="tech-stack">
-            <span class="tech">HTML/CSS</span>
-            <span class="tech">JavaScript</span>
-            <span class="tech">ElementUI</span>
-            <span class="tech">响应式设计</span>
+            <span class="tech">Layui</span>
+            <span class="tech">Node.js</span>
+            <span class="tech">Express</span>
+            <span class="tech">SQLite</span>
           </div>
           <div class="project-links">
             <a href="#gallery" class="project-link">查看详情 →</a>
@@ -109,19 +114,19 @@
 
       <div class="project-card">
         <div class="project-image">
-          <div class="image-placeholder remote-bg">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-              <line x1="12" y1="22.08" x2="12" y2="12"/>
-            </svg>
-          </div>
-          <div class="project-tag python">Python</div>
+          <img 
+            src={RS.src} 
+            alt="遥感工具系统截图"
+            class="project-screenshot"
+            loading="lazy"
+          />
+          <div class="image-overlay website-bg"></div>
+          <div class="project-tag python">遥感处理</div>
         </div>
         <div class="project-content">
           <h3>遥感数据处理工具集</h3>
           <p class="project-desc">
-            开发的遥感图像处理工具，包括数据预处理、特征提取、图像增强等功能模块。
+            为多个客户定制的遥感图像处理工具，包括数据预处理、特征提取、图像增强、格式转换等模块。基于GDAL/NumPy/OpenCV实现高效批量处理流程，支持多种遥感数据格式。
           </p>
           <div class="tech-stack">
             <span class="tech">Python</span>
@@ -137,13 +142,13 @@
 
       <div class="project-card">
         <div class="project-image">
-          <div class="image-placeholder ai-bg">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
+          <img 
+            src={AIGC.src} 
+            alt="AIGC内容生成应用截图"
+            class="project-screenshot"
+            loading="lazy"
+          />
+          <div class="image-overlay website-bg"></div>
           <div class="project-tag ai">AI应用</div>
         </div>
         <div class="project-content">
@@ -165,19 +170,19 @@
 
       <div class="project-card">
         <div class="project-image">
-          <div class="image-placeholder data-bg">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <line x1="18" y1="20" x2="18" y2="10"/>
-              <line x1="12" y1="20" x2="12" y2="4"/>
-              <line x1="6" y1="20" x2="6" y2="14"/>
-            </svg>
-          </div>
-          <div class="project-tag algorithm">算法</div>
+          <img 
+            src={TABLE.src} 
+            alt="数据分析与可视化系统截图"
+            class="project-screenshot"
+            loading="lazy"
+          />
+          <div class="image-overlay website-bg"></div>
+          <div class="project-tag algorithm">数据分析</div>
         </div>
         <div class="project-content">
           <h3>数据分析与可视化系统</h3>
           <p class="project-desc">
-            为客户定制的数据分析系统，实现数据清洗、统计分析、交互式图表展示等功能。
+            为客户定制的数据分析系统，实现数据清洗、统计分析、交互式图表展示等功能。使用Pandas进行数据处理，结合Matplotlib/Plotly生成专业级可视化报表，支持导出与自动化分析。
           </p>
           <div class="tech-stack">
             <span class="tech">Python</span>
@@ -333,6 +338,32 @@
     height: 200px;
     overflow: hidden;
     background: var(--bg-light);
+  }
+
+  /* 项目截图样式 */
+  .project-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card:hover .project-screenshot {
+    transform: scale(1.08);
+  }
+
+  /* 图片遮罩层(增强对比度和悬停效果) */
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .project-card:hover .image-overlay {
+    opacity: 0.15;
   }
 
   .image-placeholder {

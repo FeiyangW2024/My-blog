@@ -1,4 +1,10 @@
 ---
+import resGroupImg from '../assets/Gallery Pic/ResGroup.png';
+import WORLDVIEWImg from '../assets/Gallery Pic/WORLDVIEW.png';
+import UNET from '../assets/Gallery Pic/UNETRESULT.png';
+import TABLE from '../assets/Gallery Pic/TABLE2.png';
+import RS2 from '../assets/Gallery Pic/RS2.png';
+import AIGC from '../assets/Gallery Pic/AIGC2.png';
 ---
 
 <section id="gallery" class="gallery">
@@ -12,70 +18,6 @@
     <p class="section-subtitle">精选项目作品展示</p>
     
     <div class="carousel-wrapper">
-      <div class="carousel-container">
-        <div class="carousel-track">
-          <div class="carousel-slide" data-index="0">
-            <div class="slide-content webgis-preview">
-              <div class="slide-info">
-                <span class="slide-badge">Web开发</span>
-                <h3>WebGIS地理信息系统</h3>
-                <p>遥感影像可视化与地图交互</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide" data-index="1">
-            <div class="slide-content unet-preview">
-              <div class="slide-info">
-                <span class="slide-badge">AI项目</span>
-                <h3>U-Net图像分割系统</h3>
-                <p>深度学习遥感图像分割</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide" data-index="2">
-            <div class="slide-content website-preview">
-              <div class="slide-info">
-                <span class="slide-badge">Web开发</span>
-                <h3>课题组官方网站</h3>
-                <p>响应式网页设计与开发</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide" data-index="3">
-            <div class="slide-content dashboard-preview">
-              <div class="slide-info">
-                <span class="slide-badge">数据可视化</span>
-                <h3>数据分析面板</h3>
-                <p>交互式图表与统计分析</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide" data-index="4">
-            <div class="slide-content aigc-preview">
-              <div class="slide-info">
-                <span class="slide-badge">AI应用</span>
-                <h3>AIGC内容生成应用</h3>
-                <p>智能对话与内容创作</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide" data-index="5">
-            <div class="slide-content remote-preview">
-              <div class="slide-info">
-                <span class="slide-badge">Python工具</span>
-                <h3>遥感数据处理工具集</h3>
-                <p>图像预处理与特征提取</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- 轮播控制 -->
       <button class="carousel-btn prev-btn" aria-label="上一张">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -97,27 +39,128 @@
         <button class="indicator" data-slide="4"></button>
         <button class="indicator" data-slide="5"></button>
       </div>
-    </div>
 
-    <div class="gallery-note">
-      <p>💡 可替换为真实项目截图 · 自动轮播中</p>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide" data-index="0">
+            <div class="slide-content webgis-preview">
+                <img 
+                src={WORLDVIEWImg.src} 
+                alt="WORLDVIEW系统完整界面"
+                class="slide-image"
+                loading="lazy"
+                />
+              <div class="slide-overlay"></div>
+              <div class="slide-info">
+                <span class="slide-badge">Web开发</span>
+                <h3>WORLDVIEW遥感影像系统</h3>
+                <p>遥感影像可视化与地图交互</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="1">
+              <div class="slide-content unet-preview">
+                <img 
+                  src={UNET.src} 
+                  alt="U-Net图像分割系统结果展示"
+                  class="slide-image"
+                  loading="lazy"
+                />
+              <div class="slide-overlay"></div>
+              <div class="slide-info">
+                <span class="slide-badge">AI项目</span>
+                <h3>U-Net图像分割系统</h3>
+                <p>深度学习遥感图像分割</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="2">
+            <div class="slide-content website-preview">
+              <img 
+                src={resGroupImg.src} 
+                alt="课题组官网与新闻发布系统完整界面"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-info">
+                <span class="slide-badge">Web开发</span>
+                <h3>课题组官网与新闻发布系统</h3>
+                <p>课题组官网与新闻发布系统</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="3">
+            <div class="slide-content dashboard-preview">
+              <img 
+                src={TABLE.src} 
+                alt="数据分析与可视化系统完整界面"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-info">
+                <span class="slide-badge">数据可视化</span>
+                <h3>数据分析面板</h3>
+                <p>交互式图表与统计分析</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="4">
+            <div class="slide-content aigc-preview">
+              <img 
+                src={AIGC.src} 
+                alt="AIGC内容生成应用完整界面"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-info">
+                <span class="slide-badge">AI应用</span>
+                <h3>AIGC内容生成应用</h3>
+                <p>智能对话与内容创作</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide" data-index="5">
+            <div class="slide-content remote-preview">
+              <img 
+                src={RS2.src} 
+                alt="遥感数据处理工具集完整界面"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-info">
+                <span class="slide-badge">Python工具</span>
+                <h3>遥感数据处理工具集</h3>
+                <p>图像预处理与特征提取</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- （已保留上方一组控制和指示器）移除重复的控制按钮与指示器，指示器将在脚本中根据 slide 数量动态生成 -->
     </div>
   </div>
 </section>
 
 <style>
   .gallery {
-    padding: 6rem 2rem;
-    background: linear-gradient(135deg, #F7FAFC 0%, #E6F3F5 100%);
+    padding: 0;
+    background: var(--bg-white);
     position: relative;
     overflow: hidden;
   }
 
   .gallery-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
+    display: none;
   }
 
   .bg-shape {
@@ -159,8 +202,9 @@
   }
 
   .container {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     position: relative;
     z-index: 1;
   }
@@ -169,6 +213,7 @@
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 1rem;
+    padding-top: 3rem;
     color: var(--text-dark);
     position: relative;
     display: inline-block;
@@ -191,54 +236,95 @@
     text-align: center;
     color: var(--text-light);
     font-size: 1.05rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   /* 轮播容器 */
   .carousel-wrapper {
     position: relative;
-    margin: 0 auto;
-    max-width: 1200px;
+    margin: 0;
+    max-width: 100%;
   }
 
   .carousel-container {
     overflow: hidden;
-    padding: 3rem 0;
+    padding: 0;
+    position: relative;
   }
 
   .carousel-track {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    gap: 2rem;
   }
 
   .carousel-slide {
-    min-width: calc(100% / 3);
+    min-width: 100%;
+    flex-shrink: 0;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.5;
-    filter: brightness(0.7);
-    transform: scale(0.85);
   }
 
   .carousel-slide.active {
-    opacity: 1;
-    filter: brightness(1);
-    transform: scale(1);
     z-index: 2;
   }
 
   .slide-content {
     position: relative;
-    height: 400px;
-    border: 2px solid var(--border-color);
+    height: 700px;
+    border: none;
     overflow: hidden;
     transition: all 0.4s ease;
-    box-shadow: 0 10px 40px rgba(46, 125, 137, 0.15);
+    box-shadow: none;
+    cursor: pointer;
+    margin: 0;
+    max-width: 100%;
   }
 
   .carousel-slide.active .slide-content {
-    border-color: var(--primary);
-    box-shadow: 0 20px 60px rgba(46, 125, 137, 0.25);
+    border: none;
+    box-shadow: none;
+  }
+
+  .carousel-slide.active .slide-content:hover,
+  .slide-content:hover {
+    box-shadow: none;
+  }
+
+  /* 轮播图片样式 */
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* 鼠标悬停时图片放大效果 */
+  .slide-content:hover .slide-image {
+    transform: scale(1.08);
+  }
+
+  /* 图片遮罩层 */
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  /* 悬停时遮罩层稍微加深 */
+  .slide-content:hover .slide-overlay {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
   }
 
   .slide-content::before {
@@ -252,6 +338,7 @@
       transparent 4px,
       rgba(255, 255, 255, 0.03) 6px
     );
+    z-index: 1;
   }
 
   /* 渐变背景 */
@@ -284,17 +371,17 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 2rem;
+    padding: 3rem;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
     color: white;
-    transform: translateY(20px);
-    opacity: 0;
     transition: all 0.4s ease;
+    z-index: 2;
   }
 
-  .carousel-slide.active .slide-info {
-    transform: translateY(0);
-    opacity: 1;
+  /* 悬停时信息区域更明显 */
+  .slide-content:hover .slide-info {
+    padding: 3.5rem 3rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 100%);
   }
 
   .slide-badge {
@@ -309,14 +396,15 @@
   }
 
   .slide-info h3 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
     color: white;
+    font-weight: 700;
   }
 
   .slide-info p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   /* 控制按钮 */
@@ -326,15 +414,22 @@
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    background: white;
-    border: 2px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(46, 125, 137, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .carousel-wrapper:hover .carousel-btn {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .carousel-btn:hover {
@@ -353,61 +448,87 @@
   }
 
   .prev-btn {
-    left: -25px;
+    left: 2rem;
   }
 
   .next-btn {
-    right: -25px;
+    right: 2rem;
   }
 
   /* 指示器 */
   .carousel-indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 2rem;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+    /* make indicators sit above overlays */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
-  .indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--border-color);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  .carousel-wrapper:hover .carousel-indicators {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* 更高优先级、可视化更强的指示器样式 */
+  .carousel-indicators .indicator {
+    width: auto;
+    height: auto;
     padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
   }
 
-  .indicator:hover {
-    background: var(--accent);
-    transform: scale(1.2);
+  .carousel-indicators .indicator:hover {
+    transform: scale(1.05);
   }
 
-  .indicator.active {
-    background: var(--primary);
-    width: 40px;
-    border-radius: 6px;
+  /* SVG 本体样式 */
+  .carousel-indicators .indicator-svg {
+    width: 18px;
+    height: 18px;
+    transform-origin: center;
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), fill 0.28s ease;
+    display: block;
   }
 
-  .gallery-note {
-    text-align: center;
-    margin-top: 3rem;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--primary);
-    display: inline-block;
-    left: 50%;
-    position: relative;
-    transform: translateX(-50%);
+  .carousel-indicators .indicator-svg circle {
+    fill: rgba(255, 255, 255, 0.9);
+    stroke: none;
   }
 
-  .gallery-note p {
-    color: var(--text-gray);
-    font-size: 0.95rem;
-    margin: 0;
+  /* active 显示为带颜色的 pill，更明显 */
+  .carousel-indicators .indicator.active {
+    transform: scale(1.02);
+  }
+
+  /* active 时把圆变成带颜色的 pill（通过 svg 拉伸） */
+  .carousel-indicators .indicator.active .indicator-svg {
+    transform-origin: center center;
+    transform: scaleX(2.6) scaleY(0.6);
+  }
+
+  .carousel-indicators .indicator.active .indicator-svg circle {
+    fill: var(--primary, #2E7D89);
+    transition: fill 0.28s ease, transform 0.28s ease;
+  }
+
+  /* 可聚焦时的样式（键盘可访问性） */
+  .carousel-indicators .indicator:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 3px;
   }
 
   @media (max-width: 968px) {
@@ -416,28 +537,102 @@
     }
 
     .carousel-btn {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .prev-btn {
-      left: 10px;
+      left: 1rem;
     }
 
     .next-btn {
-      right: 10px;
+      right: 1rem;
+    }
+
+    .carousel-indicators {
+      opacity: 1;
+      pointer-events: auto;
+      bottom: 1.5rem;
     }
 
     .slide-content {
-      height: 300px;
+      height: 500px;
+    }
+
+    .slide-info {
+      padding: 2rem;
+    }
+
+    .slide-content:hover .slide-info {
+      padding: 2.5rem 2rem;
+    }
+
+    .slide-info h3 {
+      font-size: 1.75rem;
+    }
+
+    .slide-info p {
+      font-size: 1rem;
     }
 
     .section-title {
       font-size: 2rem;
+      padding-top: 2rem;
     }
 
-    .gallery {
-      padding: 4rem 1rem;
+    .section-subtitle {
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery-note {
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  @media (min-width: 969px) and (max-width: 1200px) {
+    .slide-content {
+      height: 600px;
+      max-width: 100%;
+    }
+
+    .slide-info h3 {
+      font-size: 2rem;
+    }
+
+    .slide-info p {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (min-width: 1201px) and (max-width: 1600px) {
+    .slide-content {
+      height: 700px;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 1601px) {
+    .slide-content {
+      height: 800px;
+      max-width: 100%;
+    }
+
+    .slide-info {
+      padding: 4rem;
+    }
+
+    .slide-content:hover .slide-info {
+      padding: 4.5rem 4rem;
+    }
+
+    .slide-info h3 {
+      font-size: 3rem;
+    }
+
+    .slide-info p {
+      font-size: 1.3rem;
     }
   }
 </style>
@@ -445,54 +640,69 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track') as HTMLElement | null;
-    const slides = document.querySelectorAll('.carousel-slide');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide')) as HTMLElement[];
     const prevBtn = document.querySelector('.prev-btn') as HTMLElement | null;
     const nextBtn = document.querySelector('.next-btn') as HTMLElement | null;
-    const indicators = document.querySelectorAll('.indicator');
-    
-    if (!track || !prevBtn || !nextBtn || !track.parentElement) return;
-    
+    const indicatorContainer = document.querySelector('.carousel-indicators') as HTMLElement | null;
+    const wrapper = document.querySelector('.carousel-wrapper') as HTMLElement | null;
+
+    if (!track || !prevBtn || !nextBtn || !indicatorContainer || !wrapper) return;
+
     let currentIndex = 0;
-    let autoplayInterval: number | undefined;
+    let autoplayInterval: number | null = null;
     const totalSlides = slides.length;
+
+    // 根据 slide 数量动态生成指示器，避免手写不一致
+    indicatorContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const btn = document.createElement('button');
+      btn.className = i === 0 ? 'indicator active' : 'indicator';
+      btn.setAttribute('data-slide', String(i));
+      btn.setAttribute('aria-label', `跳转到第 ${i + 1} 张`);
+      // 使用内联 SVG 作为指示器，可通过 CSS 控制颜色与形状
+      btn.innerHTML = `
+        <svg class="indicator-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="6" />
+        </svg>
+      `;
+      indicatorContainer.appendChild(btn);
+    }
+
+    const indicators = Array.from(indicatorContainer.querySelectorAll('.indicator')) as HTMLElement[];
 
     // 更新轮播显示
     function updateCarousel(animate = true) {
-      if (!track || !track.parentElement) return;
-      
+      if (!track) return;
+
       if (!animate) {
         track.style.transition = 'none';
       }
 
-      // 计算偏移量，使中间项居中
-      const firstSlide = slides[0] as HTMLElement;
-      const slideWidth = firstSlide.offsetWidth;
-      const gap = 32; // 2rem = 32px
-      const offset = -(currentIndex * (slideWidth + gap)) + (track.parentElement.offsetWidth / 2) - (slideWidth / 2);
-      
+      const firstSlide = slides[0];
+      if (!firstSlide) return;
+      const slideWidth = firstSlide.getBoundingClientRect().width;
+      // 保证 currentIndex 在有效范围
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= totalSlides) currentIndex = totalSlides - 1;
+
+      const offset = -(currentIndex * slideWidth);
       track.style.transform = `translateX(${offset}px)`;
 
       // 更新激活状态
       slides.forEach((slide, index) => {
-        slide.classList.remove('active');
-        if (index === currentIndex) {
-          slide.classList.add('active');
-        }
+        if (index === currentIndex) slide.classList.add('active');
+        else slide.classList.remove('active');
       });
 
       // 更新指示器
       indicators.forEach((indicator, index) => {
-        indicator.classList.remove('active');
-        if (index === currentIndex) {
-          indicator.classList.add('active');
-        }
+        if (index === currentIndex) indicator.classList.add('active');
+        else indicator.classList.remove('active');
       });
 
       if (!animate) {
         setTimeout(() => {
-          if (track) {
-            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-          }
+          track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
         }, 50);
       }
     }
@@ -511,16 +721,18 @@
 
     // 自动轮播
     function startAutoplay() {
-      autoplayInterval = window.setInterval(nextSlide, 4000);
+      stopAutoplay();
+      autoplayInterval = window.setInterval(nextSlide, 4000) as unknown as number;
     }
 
     function stopAutoplay() {
-      if (autoplayInterval !== undefined) {
+      if (autoplayInterval !== null) {
         clearInterval(autoplayInterval);
+        autoplayInterval = null;
       }
     }
 
-    // 事件监听
+    // 按钮监听
     nextBtn.addEventListener('click', () => {
       stopAutoplay();
       nextSlide();
@@ -533,6 +745,7 @@
       startAutoplay();
     });
 
+    // 指示器监听
     indicators.forEach((indicator, index) => {
       indicator.addEventListener('click', () => {
         stopAutoplay();
@@ -542,25 +755,21 @@
       });
     });
 
-    // 鼠标悬停暂停自动播放
-    if (track.parentElement) {
-      track.parentElement.addEventListener('mouseenter', stopAutoplay);
-      track.parentElement.addEventListener('mouseleave', startAutoplay);
-    }
+    // 鼠标悬停暂停自动播放（作用在 wrapper）
+    wrapper.addEventListener('mouseenter', stopAutoplay);
+    wrapper.addEventListener('mouseleave', startAutoplay);
 
     // 初始化
     updateCarousel(false);
     startAutoplay();
 
-    // 响应式处理
+    // 响应式处理：窗口大小变化时重新计算宽度并更新位置
     let resizeTimer: number | undefined;
     window.addEventListener('resize', () => {
-      if (resizeTimer !== undefined) {
-        clearTimeout(resizeTimer);
-      }
+      if (resizeTimer) clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(() => {
         updateCarousel(false);
-      }, 250);
+      }, 250) as unknown as number;
     });
   });
 </script>
